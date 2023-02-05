@@ -1,6 +1,6 @@
 package com.example.freegame.data.dto
 
-data class ListGameItem(
+data class ListGameItemDto(
     val developer: String?,
     val game_url: String?,
     val genre: String?,
