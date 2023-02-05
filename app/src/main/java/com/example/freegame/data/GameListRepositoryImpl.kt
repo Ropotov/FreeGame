@@ -4,10 +4,12 @@ import com.example.freegame.data.api.RetrofitInstance.api
 import com.example.freegame.domain.GameListRepository
 import com.example.freegame.domain.model.ListGame
 
-class GameListRepositoryImpl: GameListRepository {
+class GameListRepositoryImpl : GameListRepository {
+
+    val mapper = GameMapper()
 
     override suspend fun getListGame(): ListGame {
         val gameList = api.getListGame()
-        return TODO()
+        return mapper.mapListGameDtoToListGame(gameList)
     }
 }
