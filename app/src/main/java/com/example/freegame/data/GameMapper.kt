@@ -36,5 +36,4 @@ class GameMapper {
         private const val EMPTY_STRING = ""
         private const val EMPTY_NUMBER = 0
     }
-
 }
