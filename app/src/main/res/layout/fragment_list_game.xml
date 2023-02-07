@@ -11,7 +11,6 @@
     android:paddingBottom="4dp"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     tools:context=".presentation.listGameFragment.ListGameFragment"
-    tools:listitem="@layout/item_game">
-
-
+    tools:listitem="@layout/item_game"
+    android:background="@color/black">
 </androidx.recyclerview.widget.RecyclerView>
