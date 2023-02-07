@@ -4,19 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/listGameFragment">
-
     <fragment
         android:id="@+id/listGameFragment"
         android:name="com.example.freegame.presentation.listGameFragment.ListGameFragment"
         android:label="fragment_list_game"
-        tools:layout="@layout/fragment_list_game" >
-        <action
-            android:id="@+id/action_listGameFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.example.freegame.presentation.detailFragment.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_list_game" />
 </navigation>

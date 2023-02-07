@@ -15,13 +15,15 @@ class ListGameFragment : Fragment() {
     private lateinit var binding: FragmentListGameBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: GameListAdapter
-    private val viewModel = ViewModelProvider(this)[GameListViewModel::class.java]
+    private lateinit var viewModel: GameListViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentListGameBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProvider(this)[GameListViewModel::class.java]
         return binding.root
     }
 
@@ -30,7 +32,7 @@ class ListGameFragment : Fragment() {
         initRecyclerView()
 
         viewModel.gameList.observe(viewLifecycleOwner){
-            adapter.submitList(it.listGame)
+            adapter.submitList(it)
         }
     }
 

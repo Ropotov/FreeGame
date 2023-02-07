@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
-    private const val URL = "https://www.freetogame.com/api"
+    private const val URL = "https://www.freetogame.com/api/"
 
     private val retrofit by lazy {
 
