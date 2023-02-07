@@ -1,8 +1,6 @@
 package com.example.freegame.data
 
-import com.example.freegame.data.dto.ListGameDto
 import com.example.freegame.data.dto.ListGameItemDto
-import com.example.freegame.domain.model.ListGame
 import com.example.freegame.domain.model.ListGameItem
 
 class GameMapper {
@@ -22,15 +20,14 @@ class GameMapper {
         title = listGameItemDto.title ?: EMPTY_STRING
     )
 
-    private fun mapListGameItemDtoToListGameItem(
-        listGameDto: List<ListGameItemDto>
-    ) = listGameDto.map {
-        mapGameItemDtoToGameItem(it)
+    fun mapListGameItemDtoToListGameItem(listGameDto: List<ListGameItemDto>): List<ListGameItem> {
+        val listGameItem = mutableListOf<ListGameItem>()
+        for (i in listGameDto) {
+            val newItem = mapGameItemDtoToGameItem(i)
+            listGameItem.add(newItem)
+        }
+        return listGameItem
     }
-
-    fun mapListGameDtoToListGame(listGameDto: ListGameDto) = ListGame(
-        listGame = mapListGameItemDtoToListGameItem(listGameDto.listGame)
-    )
 
     companion object {
         private const val EMPTY_STRING = ""

@@ -31,7 +31,7 @@ class ListGameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView()
 
-        viewModel.gameList.observe(viewLifecycleOwner){
+        viewModel.gameList.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
     }

@@ -1,16 +1,14 @@
 package com.example.freegame.data
 
-import com.example.freegame.data.api.RetrofitInstance.api
-import com.example.freegame.data.dto.ListGameDto
-import com.example.freegame.data.dto.ListGameItemDto
+import com.example.freegame.data.api.RetrofitInstance
 import com.example.freegame.domain.GameListRepository
-import com.example.freegame.domain.model.ListGame
+import com.example.freegame.domain.model.ListGameItem
 
 class GameListRepositoryImpl : GameListRepository {
 
     private val mapper = GameMapper()
-    override suspend fun getListGame(): ListGame {
-        TODO("Not yet implemented")
+    override suspend fun getListGame(): List<ListGameItem> {
+        val list = RetrofitInstance.api.getListGame()
+        return mapper.mapListGameItemDtoToListGameItem(list)
     }
-
 }
