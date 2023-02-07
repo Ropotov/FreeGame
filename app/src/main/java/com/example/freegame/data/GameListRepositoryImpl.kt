@@ -6,7 +6,7 @@ import com.example.freegame.domain.model.ListGame
 
 class GameListRepositoryImpl : GameListRepository {
 
-    val mapper = GameMapper()
+    private val mapper = GameMapper()
 
     override suspend fun getListGame(): ListGame {
         val gameList = api.getListGame()
