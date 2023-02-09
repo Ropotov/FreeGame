@@ -1,8 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lite_black"
     tools:context=".presentation.detailFragment.DetailFragment">
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/ivDetailPoster"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:contentDescription="@string/poster"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tvDetailGameName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:fontFamily="@font/titan_one"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivDetailPoster"
+        tools:text="GAME FREE" />
+
+    <TextView
+        android:id="@+id/tvDetailRealiseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:fontFamily="@font/titan_one"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toStartOf="@+id/tvDetailDeveloper"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailGameName"
+        tools:text="24/01/2022" />
+
+    <TextView
+        android:id="@+id/tvDetailDeveloper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:fontFamily="@font/titan_one"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDetailRealiseDate"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailGameName"
+        tools:text="battle net" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:fontFamily="@font/titan_one"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        tools:text="@string/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnScreenshots"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailRealiseDate" />
+
+    <Button
+        android:id="@+id/btnScreenshots"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/btnSystemRequirements"
+     android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/screenshots"
+        android:backgroundTint="@color/green_blue"
+        android:textAllCaps="false"
+        android:fontFamily="@font/titan_one"/>
+
+    <Button
+        android:id="@+id/btnSystemRequirements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/systemrequirements"
+        android:backgroundTint="@color/green_blue"
+        android:textAllCaps="false"
+        android:fontFamily="@font/titan_one"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

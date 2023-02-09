@@ -5,4 +5,7 @@
     <string name="poster">poster</string>
     <string name="date">24.01.2022</string>
     <string name="platform">PS5</string>
+    <string name="systemrequirements">System Requirements</string>
+    <string name="screenshots">Screenshots</string>
+    <string name="text">Aenean vehicula augue ac elementum convallis. Aliquam elementum egestas lorem eu dictum. In suscipit sed risus vitae placerat. Sed in dictum metus. Nam vitae magna nec metus commodo molestie non vel ligula. Nunc dignissim lacinia auctor. Vestibulum ac erat nec nibh cursus dictum. Nunc ut lobortis est, vitae mattis dui. Nulla euismod quis lectus id auctor. Quisque convallis urna arcu, id porta erat imperdiet eget.</string>
 </resources>
