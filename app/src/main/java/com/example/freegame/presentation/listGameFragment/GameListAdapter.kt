@@ -8,6 +8,9 @@ import com.example.freegame.domain.model.ListGameItem
 
 
 class GameListAdapter : ListAdapter<ListGameItem, GameListViewHolder>(DiffCallBack()) {
+
+    var onGameClickListener: ((ListGameItem) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameListViewHolder {
         val binding = ItemGameBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -20,6 +23,8 @@ class GameListAdapter : ListAdapter<ListGameItem, GameListViewHolder>(DiffCallBa
     override fun onBindViewHolder(holder: GameListViewHolder, position: Int) {
         val gamePosition = getItem(position)
         holder.bind(gamePosition)
+        holder.binding.root.setOnClickListener {
+            onGameClickListener?.invoke(gamePosition)
+        }
     }
-
 }
