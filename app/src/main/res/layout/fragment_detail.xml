@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/ivDetailPoster"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="220dp"
         android:contentDescription="@string/poster"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,19 +62,25 @@
         app:layout_constraintTop_toBottomOf="@+id/tvDetailGameName"
         tools:text="battle net" />
 
-    <TextView
-        android:id="@+id/tvDescription"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"
-        android:fontFamily="@font/titan_one"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/btnScreenshots"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDetailRealiseDate"
-        tools:text="@string/text" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailRealiseDate">
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/titan_one"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            tools:text="@string/text" />
+
+    </ScrollView>
 
     <Button
         android:id="@+id/btnScreenshots"

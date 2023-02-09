@@ -40,14 +40,26 @@ class GameMapper {
         image = screenshotDto.image ?: EMPTY_STRING
     )
 
-    private fun mapSystemRequirements(systemRequirementsDto: SystemRequirementsDto) =
-        SystemRequirements(
-            graphics = systemRequirementsDto.graphics ?: EMPTY_STRING,
-            memory = systemRequirementsDto.memory ?: EMPTY_STRING,
-            os = systemRequirementsDto.os ?: EMPTY_STRING,
-            processor = systemRequirementsDto.processor ?: EMPTY_STRING,
-            storage = systemRequirementsDto.storage ?: EMPTY_STRING
-        )
+    private fun mapSystemRequirements(systemRequirementsDto: SystemRequirementsDto)
+            : SystemRequirements {
+        return if (systemRequirementsDto == null) {
+            SystemRequirements(
+                graphics = EMPTY_STRING,
+                memory = EMPTY_STRING,
+                os = EMPTY_STRING,
+                processor = EMPTY_STRING,
+                storage = EMPTY_STRING
+            )
+        } else {
+            SystemRequirements(
+                graphics = systemRequirementsDto.graphics ?: EMPTY_STRING,
+                memory = systemRequirementsDto.memory ?: EMPTY_STRING,
+                os = systemRequirementsDto.os ?: EMPTY_STRING,
+                processor = systemRequirementsDto.processor ?: EMPTY_STRING,
+                storage = systemRequirementsDto.storage ?: EMPTY_STRING
+            )
+        }
+    }
 
     private fun mapScreenshotList(listScreenshotDto: List<ScreenshotDto>): List<Screenshot> {
         val listScreenshot = mutableListOf<Screenshot>()
