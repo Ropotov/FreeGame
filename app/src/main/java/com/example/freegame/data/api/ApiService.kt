@@ -11,5 +11,5 @@ interface ApiService {
     suspend fun getListGame(): List<ListGameItemDto>
 
     @GET("game")
-    suspend fun getGameToId(@Query("id") id: String): DetailGameItemDto
+    suspend fun getGameToId(@Query("id") id: Int): DetailGameItemDto
 }

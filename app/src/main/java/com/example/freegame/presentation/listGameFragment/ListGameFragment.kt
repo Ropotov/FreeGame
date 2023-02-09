@@ -1,7 +1,6 @@
 package com.example.freegame.presentation.listGameFragment
 
 import android.os.Bundle
-import android.text.Layout.Directions
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,9 +37,9 @@ class ListGameFragment : Fragment() {
         }
 
         adapter.onGameClickListener = {
-          findNavController().navigate(
-              ListGameFragmentDirections.actionListGameFragmentToDetailFragment(it.id)
-          )
+            findNavController().navigate(
+                ListGameFragmentDirections.actionListGameFragmentToDetailFragment(it.id)
+            )
         }
     }
 

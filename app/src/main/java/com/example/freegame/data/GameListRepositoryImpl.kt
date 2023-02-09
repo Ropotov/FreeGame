@@ -13,7 +13,7 @@ class GameListRepositoryImpl : GameListRepository {
         return mapper.mapListGameItemDtoToListGameItem(list)
     }
 
-    override suspend fun getGameToId(id: String): DetailGameItem {
+    override suspend fun getGameToId(id: Int): DetailGameItem {
         val gameItem = RetrofitInstance.api.getGameToId(id)
         return mapper.mapDetailGameItemDtoToDetailGameItem(gameItem)
     }
