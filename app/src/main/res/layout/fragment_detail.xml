@@ -91,6 +91,7 @@
         android:backgroundTint="@color/green_blue"
         android:fontFamily="@font/titan_one"
         android:text="@string/screenshots"
+        android:textStyle="italic"
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@id/btnSystemRequirements" />
 
@@ -105,6 +106,7 @@
         android:fontFamily="@font/titan_one"
         android:text="@string/systemrequirements"
         android:textAllCaps="false"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

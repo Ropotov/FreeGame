@@ -12,5 +12,5 @@
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     tools:context=".presentation.listGameFragment.ListGameFragment"
     tools:listitem="@layout/item_game"
-    android:background="@color/black">
+    android:background="@color/lite_black">
 </androidx.recyclerview.widget.RecyclerView>

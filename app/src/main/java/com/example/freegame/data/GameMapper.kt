@@ -26,11 +26,13 @@ class GameMapper {
         title = listGameItemDto.title ?: EMPTY_STRING
     )
 
-    fun mapListGameItemDtoToListGameItem(listGameDto: List<ListGameItemDto>): List<ListGameItem> {
+    fun mapListGameItemDtoToListGameItem(listGameDto: List<ListGameItemDto>?): List<ListGameItem> {
         val listGameItem = mutableListOf<ListGameItem>()
-        for (i in listGameDto) {
-            val newItem = mapGameItemDtoToGameItem(i)
-            listGameItem.add(newItem)
+        if (listGameDto != null){
+            for (i in listGameDto) {
+                val newItem = mapGameItemDtoToGameItem(i)
+                listGameItem.add(newItem)
+            }
         }
         return listGameItem
     }
@@ -40,7 +42,7 @@ class GameMapper {
         image = screenshotDto.image ?: EMPTY_STRING
     )
 
-    private fun mapSystemRequirements(systemRequirementsDto: SystemRequirementsDto)
+    private fun mapSystemRequirements(systemRequirementsDto: SystemRequirementsDto?)
             : SystemRequirements {
         return if (systemRequirementsDto == null) {
             SystemRequirements(
@@ -61,16 +63,18 @@ class GameMapper {
         }
     }
 
-    private fun mapScreenshotList(listScreenshotDto: List<ScreenshotDto>): List<Screenshot> {
+    private fun mapScreenshotList(listScreenshotDto: List<ScreenshotDto>?): List<Screenshot> {
         val listScreenshot = mutableListOf<Screenshot>()
-        for (i in listScreenshotDto) {
-            val newItem = mapScreenshotDtoToScreenshot(i)
-            listScreenshot.add(newItem)
+        if (listScreenshotDto != null){
+            for (i in listScreenshotDto) {
+                val newItem = mapScreenshotDtoToScreenshot(i)
+                listScreenshot.add(newItem)
+            }
         }
         return listScreenshot
     }
 
-    fun mapDetailGameItemDtoToDetailGameItem(detailGameItemDto: DetailGameItemDto) =
+    fun mapDetailGameItemDtoToDetailGameItem(detailGameItemDto: DetailGameItemDto): DetailGameItem =
         DetailGameItem(
             description = detailGameItemDto.description ?: EMPTY_STRING,
             developer = detailGameItemDto.developer ?: EMPTY_STRING,
@@ -88,6 +92,7 @@ class GameMapper {
             thumbnail = detailGameItemDto.thumbnail ?: EMPTY_STRING,
             title = detailGameItemDto.title ?: EMPTY_STRING
         )
+
 
     companion object {
         private const val EMPTY_STRING = ""
