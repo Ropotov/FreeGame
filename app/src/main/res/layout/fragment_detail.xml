@@ -71,34 +71,34 @@
         android:textColor="@color/white"
         android:textSize="12sp"
         android:textStyle="italic"
-        tools:text="@string/text"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/btnScreenshots"
-        app:layout_constraintTop_toBottomOf="@+id/tvDetailRealiseDate" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailRealiseDate"
+        tools:text="@string/text" />
 
     <Button
         android:id="@+id/btnScreenshots"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/btnSystemRequirements"
-     android:layout_marginStart="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/screenshots"
         android:backgroundTint="@color/green_blue"
+        android:fontFamily="@font/titan_one"
+        android:text="@string/screenshots"
         android:textAllCaps="false"
-        android:fontFamily="@font/titan_one"/>
+        app:layout_constraintBottom_toTopOf="@id/btnSystemRequirements" />
 
     <Button
         android:id="@+id/btnSystemRequirements"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/systemrequirements"
         android:backgroundTint="@color/green_blue"
+        android:fontFamily="@font/titan_one"
+        android:text="@string/systemrequirements"
         android:textAllCaps="false"
-        android:fontFamily="@font/titan_one"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
